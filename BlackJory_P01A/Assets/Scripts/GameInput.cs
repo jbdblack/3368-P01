@@ -25,6 +25,11 @@ public class GameInput : MonoBehaviour
         {
             ReloadLevel();
         }
+
+        if (Input.GetKeyDown("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     void ReloadLevel()
