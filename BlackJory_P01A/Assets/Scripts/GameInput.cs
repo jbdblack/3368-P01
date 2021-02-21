@@ -9,6 +9,8 @@ public class GameInput : MonoBehaviour
     public GameObject youWinText;
     public GameObject youLoseText;
 
+    [SerializeField] AudioClip _powerupSound = null;
+
     public static GameInput instance = null;
 
     void Awake()
@@ -29,6 +31,13 @@ public class GameInput : MonoBehaviour
         if (Input.GetKeyDown("escape"))
         {
             Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // play audio
+            AudioHelper.PlayClip2D(_powerupSound, 1);
+            
         }
     }
 

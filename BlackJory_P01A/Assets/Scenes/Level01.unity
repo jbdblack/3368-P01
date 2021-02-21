@@ -714,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   youWinText: {fileID: 704721699}
   youLoseText: {fileID: 472163815}
+  _powerupSound: {fileID: 8300000, guid: 21dcadbb1109a124ba30f750304a25fb, type: 3}
 --- !u!4 &512027864
 Transform:
   m_ObjectHideFlags: 0
