@@ -11,6 +11,8 @@ public class PlayerShip : MonoBehaviour
     [Header("Feedback")]
     [SerializeField] TrailRenderer _trail = null;
 
+    [SerializeField] ParticleSystem shipParticle = null;
+
     Rigidbody _rb = null;
 
     private void Awake()
@@ -24,6 +26,21 @@ public class PlayerShip : MonoBehaviour
     {
         MoveShip();
         TurnShip();
+    }
+
+    private void Update()
+    {
+        // start/stop the particles for forward movement
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            shipParticle.Play();
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            shipParticle.Stop();
+        }
+        
     }
 
     // use forces to build momentum forward/backward
@@ -64,4 +81,5 @@ public class PlayerShip : MonoBehaviour
     {
         _trail.enabled = activeState;
     }
+
 }
