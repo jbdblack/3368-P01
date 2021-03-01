@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WinVolume : MonoBehaviour
 {
+    [SerializeField] AudioClip _winSound = null;
+
     private void OnTriggerEnter(Collider other)
     {
         // detect if it's the player
@@ -14,6 +16,8 @@ public class WinVolume : MonoBehaviour
             //do something!
             playerShip.Kill();
             GameInput.instance.YouWin();
+            // play audio
+            AudioHelper.PlayClip2D(_winSound, 1);
         }
 
     }
