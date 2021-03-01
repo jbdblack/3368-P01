@@ -82,4 +82,15 @@ public class PlayerShip : MonoBehaviour
         _trail.enabled = activeState;
     }
 
+    public void ShrinkScale()
+    {
+        this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+    }
+
+    public void GrowScale()
+    {
+        this.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
+
 }
